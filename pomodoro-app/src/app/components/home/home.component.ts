@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  statusLabel : string = 'PAUSE';
+  timeLeft : string = '17:59'
+  timerType : string = 'pomodoro'
+
+
+  changeTypeTimer(type : string){
+    this.timerType = type;
+  }
 }

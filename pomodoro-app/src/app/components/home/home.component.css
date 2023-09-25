@@ -1,0 +1,92 @@
+.title{
+  text-align: center;
+  padding:20px;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.menu{
+  margin: auto;
+  display: flex;
+  gap: 10px;
+  background-color: var(--black);
+  justify-content: center;
+  width: 327px;
+  height: 63px;
+  border-radius: 50px;
+}
+
+.menu-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  width: 106px;
+  height: 48px;
+  color:var(--gray);
+  font-size: 12px;
+  font-weight: 800;
+  opacity: 0.6;
+}
+
+.bg-theme{
+  background-color: var(--theme-color);
+  color: var(--black);
+  opacity: 1;
+}
+
+.timer-container{
+  height: 427px;
+}
+
+.dark-circle{
+  margin: auto;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  background-color: var(--black);
+  margin-top: 50px;
+  position: relative;
+}
+
+.theme-circle{
+  margin: auto;
+  height: 267px;
+  width: 267px;
+  border: 10px solid var(--theme-color);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.timer{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.time-left{
+  font-size: 80px;
+  font-weight: 800;
+}
+
+.status{
+  font-size: 14px;
+  letter-spacing: 13.3px;
+  font-weight: 800;
+  text-align: center;
+}
+
+
+
+
+
+
+.config-button{
+  text-align: center;
+}
