@@ -25,7 +25,52 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              {
+                "input": "src/assets/themes/blue-kumbh.css",
+                "bundleName": "blue-kumbh",
+                "inject": false
+              },
+              {
+                "input": "src/assets/themes/blue-mono.css",
+                "bundleName": "blue-mono",
+                "inject": false
+              },
+              {
+                "input": "src/assets/themes/blue-roboto.css",
+                "bundleName": "blue-roboto",
+                "inject": false
+              },
+              {
+                "input": "src/assets/themes/orange-kumbh.css",
+                "bundleName": "orange-kumbh",
+                "inject": false
+              },
+              {
+                "input": "src/assets/themes/orange-mono.css",
+                "bundleName": "orange-mono",
+                "inject": false
+              },
+              {
+                "input": "src/assets/themes/orange-roboto.css",
+                "bundleName": "orange-roboto",
+                "inject": false
+              },
+              {
+                "input": "src/assets/themes/purple-kumbh.css",
+                "bundleName": "purple-kumbh",
+                "inject": false
+              },
+              {
+                "input": "src/assets/themes/purple-mono.css",
+                "bundleName": "purple-mono",
+                "inject": false
+              },
+              {
+                "input": "src/assets/themes/purple-roboto.css",
+                "bundleName": "purple-roboto",
+                "inject": false
+              }
             ],
             "scripts": []
           },

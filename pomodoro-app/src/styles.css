@@ -6,11 +6,26 @@
 
 /* Colors */
 
-  --typography: inter;
 
-  --bg-color: #FFFFFF;
-  --text-color: #2D2D2D;
-  --input-bg-color: #F4F4F4
+--orange: #F87070;
+--light-blue: #70F3F8;
+--purple: #D881F8;
+--gray: #D7E0FF;
+--dark-blue: #1E213F;
+--white: #FFFFFF;
+--off-white: #EFF1FA;
+--black: #161932;
+
+
+
+
+
+
+--theme-color: #F87070;
+
+
+/* typography */
+--typography: kumbh;
 
 }
 
@@ -18,9 +33,19 @@
 /* Typography */
 
 @font-face {
+  font-family: 'kumbh';
+  src: url('./assets/fonts/KumbhSans-VariableFont_YOPQ,wght.ttf');
+}
+@font-face {
   font-family: 'roboto';
   src: url('./assets/fonts/RobotoSlab-VariableFont_wght.ttf');
 }
+
+@font-face {
+  font-family: 'mono';
+  src: url('./assets/fonts/SpaceMono-Regular.ttf');
+}
+
 
 
 
@@ -80,8 +105,8 @@ select {
 body {
   font-family: var(--typography);
   min-height: 100vh;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: var(--dark-blue);
+  color: var(--gray);
 
 }
 
