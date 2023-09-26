@@ -10,8 +10,9 @@
     <div class="dark-circle">
       <div class="theme-circle">
         <div class="timer">
-          <div class="time-left">{{timeLeft}}</div>
-          <div class="status">{{statusLabel}}</div>
+          <div class="time-left">{{secondsRemaing*1000  | date:'mm:ss'}}</div>
+          <!-- <div *ngIf="!timeLeft$" class="time-left">{{(minutesConfig*60*1000) | date:'mm:ss'}}</div> -->
+          <div class="status" (click)="startPauseTimer()">{{statusLabel}}</div>
         </div>
 
       </div>
