@@ -49,19 +49,6 @@
   position: relative;
 }
 
-.theme-circle{
-  margin: auto;
-  height: 267px;
-  width: 267px;
-  border: 10px solid var(--theme-color);
-  border-radius: 50%;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-
-}
-
 .timer{
   position: absolute;
   left: 50%;
@@ -81,10 +68,6 @@
   font-weight: 800;
   text-align: center;
 }
-
-
-
-
 
 
 .config-button{

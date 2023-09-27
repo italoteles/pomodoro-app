@@ -8,13 +8,15 @@
 
   <div class="timer-container">
     <div class="dark-circle">
-      <div class="theme-circle">
-        <div class="timer">
-          <div class="time-left">{{secondsRemaing*1000  | date:'mm:ss'}}</div>
-          <!-- <div *ngIf="!timeLeft$" class="time-left">{{(minutesConfig*60*1000) | date:'mm:ss'}}</div> -->
-          <div class="status" (click)="startPauseTimer()">{{statusLabel}}</div>
-        </div>
+      <svg width="300" height="300" viewBox="0 0 100 100">
+        <circle r="45" cx="50" cy="50" fill="transparent" stroke="var(--black)" stroke-width="5px"></circle>
+        <circle #circleProgress r="45" cx="50" cy="50" fill="transparent" stroke="var(--theme-color)" stroke-width="5px" attr.stroke-dasharray={{dashArrayNumber}} attr.stroke-dashoffset={{dashOffSetNumber}}></circle>
 
+      </svg>
+      <div class="timer">
+        <div class="time-left">{{secondsRemaing*1000  | date:'mm:ss'}}</div>
+
+        <div class="status" (click)="startPauseTimer()">{{statusLabel}}</div>
       </div>
     </div>
   </div>
