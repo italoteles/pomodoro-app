@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit,AfterViewInit {
   status : string = 'notStarted';
   dashArrayNumber : number = 0;
   dashOffSetNumber : number = 0;
-  modalConfig : boolean = true;
+  modalConfig : boolean = false;
   minValue : number = 1;
   maxValue : number = 120;
   fontSelected : string = 'kumbh';
