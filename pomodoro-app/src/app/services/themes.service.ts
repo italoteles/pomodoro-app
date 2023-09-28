@@ -1,7 +1,9 @@
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ThemesService {
 
   constructor(@Inject(DOCUMENT) private document: Document) { }
@@ -23,5 +25,6 @@ export class ThemesService {
       head.appendChild(style);
     }
   }
-
 }
+
+

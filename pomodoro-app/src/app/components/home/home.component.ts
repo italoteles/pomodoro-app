@@ -1,4 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ThemesService } from 'src/app/services/themes.service';
+
 
 
 @Component({
@@ -20,6 +22,11 @@ export class HomeComponent implements OnInit,AfterViewInit {
   dashArrayNumber : number = 0;
   dashOffSetNumber : number = 0;
   modalConfig : boolean = true;
+  minValue : number = 1;
+  maxValue : number = 120;
+  fontSelected : string = 'kumbh';
+  colorThemeSelected : string = 'orange';
+
 
   @ViewChild("circleProgress") circleProgress!: ElementRef;
   @ViewChild("container") container!: ElementRef;
@@ -27,6 +34,8 @@ export class HomeComponent implements OnInit,AfterViewInit {
 
   timerId! : any;
 
+
+  constructor(private theme: ThemesService){}
 
   ngOnInit(): void {
     this.secondsRemaing = this.minutesConfigPomodoro * 60;
@@ -105,6 +114,60 @@ export class HomeComponent implements OnInit,AfterViewInit {
   openConfig(){
     this.modalConfig = true;
     this.container.nativeElement.style.filter =  "blur(10px)";
+  }
+
+  increaseNumber(type : string){
+    if (type=='pomodoro'){
+      if (((this.minutesConfigPomodoro+1) >= this.minValue) && ((this.minutesConfigPomodoro+1) <= this.maxValue)) {
+        this.minutesConfigPomodoro = this.minutesConfigPomodoro + 1;
+      }
+    } else{
+      if (type=='short'){
+        if (((this.minutesConfigShort+1) >= this.minValue) && ((this.minutesConfigShort+1) <= this.maxValue)) {
+          this.minutesConfigShort = this.minutesConfigShort + 1;
+        }
+      }
+      else{
+        if (((this.minutesConfigLong+1) >= this.minValue) && ((this.minutesConfigLong+1) <= this.maxValue)) {
+          this.minutesConfigLong = this.minutesConfigLong + 1;
+        }
+      }
+    }
+  }
+  decreaseNumber(type : string){
+    if (type=='pomodoro'){
+      if (((this.minutesConfigPomodoro-1) >= this.minValue) && ((this.minutesConfigPomodoro-1) <= this.maxValue)) {
+        this.minutesConfigPomodoro = this.minutesConfigPomodoro - 1;
+      }
+    } else{
+      if (type=='short'){
+        if (((this.minutesConfigShort-1) >= this.minValue) && ((this.minutesConfigShort-1) <= this.maxValue)) {
+          this.minutesConfigShort = this.minutesConfigShort - 1;
+        }
+      }
+      else{
+        if (((this.minutesConfigLong-1) >= this.minValue) && ((this.minutesConfigLong-1) <= this.maxValue)) {
+          this.minutesConfigLong = this.minutesConfigLong - 1;
+        }
+      }
+    }
+  }
+
+  changeFont(font : string){
+    this.fontSelected = font;
+    let fontTheme : string = this.colorThemeSelected + '-' + this.fontSelected;
+    this.theme.loadTheme(fontTheme);
+  }
+
+  changeColor(color : string){
+    this.colorThemeSelected = color;
+    let fontTheme : string = this.colorThemeSelected + '-' + this.fontSelected;
+    this.theme.loadTheme(fontTheme);
+  }
+
+  close(){
+    this.modalConfig = false;
+    this.container.nativeElement.style.filter =  "blur(0px)";
   }
 
 
