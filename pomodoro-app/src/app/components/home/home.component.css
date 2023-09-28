@@ -6,14 +6,15 @@
 }
 
 .menu{
-  margin: auto;
   display: flex;
   gap: 10px;
   background-color: var(--black);
   justify-content: center;
+  align-items: center;
   width: 327px;
   height: 63px;
   border-radius: 50px;
+
 }
 
 .menu-item{
