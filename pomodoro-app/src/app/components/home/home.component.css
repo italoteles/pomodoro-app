@@ -73,3 +73,79 @@
 .config-button{
   text-align: center;
 }
+
+
+.modal-config{
+  width: 90%;
+  max-width: 327px;
+  height: 549px;
+  background-color: var(--white);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+
+
+}
+
+.title-config{
+  color: var(--black);
+  font-size: 20px;
+  font-weight: 800;
+  padding: 20px;
+}
+
+.subtitle-config{
+  color: var(--black);
+  text-align: center;
+  letter-spacing: 4.23px;
+  font-size: 11px;
+  font-weight: 800;
+  padding : 15px;
+}
+
+.time-config{
+  display: flex;
+  flex-direction: column;
+}
+
+.field{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  align-items: center;
+
+
+}
+
+.time-label{
+  color: var(--dark-blue);
+  text-align: center;
+  font-size: 12px;
+  font-weight: 800;
+  opacity: 0.4;
+
+}
+
+.input-container{
+  display: flex;
+  max-width: 130px;
+  background-color: var(--off-white);
+  height: 40px;
+  border-radius: 8px;
+
+}
+
+.input input{
+  width: 110px;
+  background-color: transparent;
+  border: none;
+  height: 40px;
+  font-weight: 800;
+  text-align: center;
+}
+.icon-container{
+  padding-right: 4px ;
+}

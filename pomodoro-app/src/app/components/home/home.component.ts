@@ -19,8 +19,10 @@ export class HomeComponent implements OnInit,AfterViewInit {
   status : string = 'notStarted';
   dashArrayNumber : number = 0;
   dashOffSetNumber : number = 0;
+  modalConfig : boolean = true;
 
   @ViewChild("circleProgress") circleProgress!: ElementRef;
+  @ViewChild("container") container!: ElementRef;
 
 
   timerId! : any;
@@ -98,6 +100,11 @@ export class HomeComponent implements OnInit,AfterViewInit {
     let percentProgress = this.secondsRemaing / total;
 
     this.dashOffSetNumber = this.dashArrayNumber *percentProgress;
+  }
+
+  openConfig(){
+    this.modalConfig = true;
+    this.container.nativeElement.style.filter =  "blur(10px)";
   }
 
 
