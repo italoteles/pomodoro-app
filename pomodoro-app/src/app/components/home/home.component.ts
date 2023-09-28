@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit,AfterViewInit {
 
 
 
-  statusLabel : string = 'PAUSE';
+  statusLabel : string = 'START';
   timerType : string = 'pomodoro'
   minutesConfigPomodoro : number = 2;
   minutesConfigShort : number = 5;
@@ -50,42 +50,45 @@ export class HomeComponent implements OnInit,AfterViewInit {
 
   changeTypeTimer(type : string){
     this.timerType = type;
-    clearInterval(this.timerId)
-    this.status = 'notStarted';
-    this.dashOffSetNumber = 0;
-    if (this.timerType=='pomodoro'){
-      this.secondsRemaing = this.minutesConfigPomodoro * 60;
-    } else{
-      if (this.timerType=='short'){
-        this.secondsRemaing = this.minutesConfigShort * 60;
-      }
-      else{
-        this.secondsRemaing = this.minutesConfigLong * 60;
-      }
-    }
-
+    this.reset();
 
   }
 
   startPauseTimer(){
 
-    if (this.status == 'notStarted'){
+    if ((this.status == 'notStarted') || (this.status == 'restart')){
+      if(this.status == 'restart'){
+        this.reset();
+      }
       this.status = 'started';
+      this.statusLabel = 'PAUSE';
       this.timerId = setInterval(() => {
-        this.secondsRemaing = this.secondsRemaing - 1;
-        this.calculateProgress();
+        if (this.secondsRemaing > 0){
+          this.secondsRemaing = this.secondsRemaing - 1;
+          this.calculateProgress();
+        }else{
+          this.statusLabel = 'RESTART';
+          this.status = 'restart';
+        }
       }, 1000);
 
     }else{
       if(this.status == 'started'){
         this.status = 'paused';
+        this.statusLabel = 'RESUME'
         clearInterval(this.timerId);
       }
       else{
         this.status = 'started';
+        this.statusLabel = 'PAUSE';
         this.timerId = setInterval(() => {
-          this.secondsRemaing = this.secondsRemaing - 1;
-          this.calculateProgress();
+          if (this.secondsRemaing > 0){
+            this.secondsRemaing = this.secondsRemaing - 1;
+            this.calculateProgress();
+          }else{
+            this.statusLabel = 'RESTART';
+            this.status = 'restart';
+          }
         }, 1000);
       }
     }
@@ -168,6 +171,29 @@ export class HomeComponent implements OnInit,AfterViewInit {
   close(){
     this.modalConfig = false;
     this.container.nativeElement.style.filter =  "blur(0px)";
+  }
+  apply(){
+    this.modalConfig = false;
+    this.container.nativeElement.style.filter =  "blur(0px)";
+    this.reset();
+  }
+
+  reset(){
+    clearInterval(this.timerId)
+    this.status = 'notStarted';
+    this.statusLabel = 'START';
+    this.dashOffSetNumber = 0;
+
+    if (this.timerType=='pomodoro'){
+      this.secondsRemaing = this.minutesConfigPomodoro * 60;
+    } else{
+      if (this.timerType=='short'){
+        this.secondsRemaing = this.minutesConfigShort * 60;
+      }
+      else{
+        this.secondsRemaing = this.minutesConfigLong * 60;
+      }
+    }
   }
 
 

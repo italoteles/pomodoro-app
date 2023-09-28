@@ -8,7 +8,7 @@
     <div class="menu-item" [ngClass]="{'bg-theme' : timerType == 'long'}" (click)="changeTypeTimer('long')">long break</div>
   </nav>
 
-  <div class="timer-container">
+  <div class="timer-container" (click)="startPauseTimer()">
     <div class="dark-circle">
       <svg width="300" height="300" viewBox="0 0 100 100">
         <circle r="45" cx="50" cy="50" fill="transparent" stroke="var(--black)" stroke-width="5px"></circle>
@@ -18,7 +18,7 @@
       <div class="timer">
         <div class="time-left">{{secondsRemaing*1000  | date:'mm:ss'}}</div>
 
-        <div class="status" (click)="startPauseTimer()">{{statusLabel}}</div>
+        <div class="status">{{statusLabel}}</div>
       </div>
     </div>
   </div>
@@ -106,5 +106,5 @@
 
   </div>
 
-  <div class="button-apply-container"><button class="button-apply" (click)="close()">Apply</button></div>
+  <div class="button-apply-container"><button class="button-apply" (click)="apply()">Apply</button></div>
 </div>
