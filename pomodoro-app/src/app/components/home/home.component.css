@@ -49,6 +49,7 @@
   background-color: var(--black);
   margin-top: 50px;
   position: relative;
+  cursor: pointer;
 }
 
 .timer{
