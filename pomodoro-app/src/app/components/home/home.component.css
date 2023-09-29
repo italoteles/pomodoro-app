@@ -29,6 +29,7 @@
   font-size: 12px;
   font-weight: 800;
   opacity: 0.6;
+  cursor: pointer;
 }
 
 .bg-theme{
@@ -75,6 +76,7 @@
 
 .config-button{
   text-align: center;
+  cursor: pointer;
 }
 
 
@@ -232,7 +234,7 @@
   }
 
   .timer-container{
-    height: 600px;
+    height: 470px;
   }
 
   .dark-circle{
