@@ -42,68 +42,76 @@
   <hr>
   <div class="time-config">
     <div class="subtitle-config">TIME (MINUTES)</div>
-    <div class="field">
-      <div class="time-label">pomodoro</div>
+    <div class="field-group">
+      <div class="field">
+        <div class="time-label">pomodoro</div>
+          <div class="input-container">
+            <div class="input">
+              <input disabled type="number" [(ngModel)]="minutesConfigPomodoro"/>
+            </div>
+            <div class="icon-container">
+              <svg (click)="increaseNumber('pomodoro')" xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 6l6-4 6 4"/></svg>
+              <svg (click)="decreaseNumber('pomodoro')" xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 1l6 4 6-4"/></svg>
+            </div>
+          </div>
+
+
+      </div>
+      <div class="field">
+        <div class="time-label">short break</div>
         <div class="input-container">
           <div class="input">
-            <input disabled type="number" [(ngModel)]="minutesConfigPomodoro"/>
+            <input disabled type="number" [(ngModel)]="minutesConfigShort"/>
           </div>
           <div class="icon-container">
-            <svg (click)="increaseNumber('pomodoro')" xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 6l6-4 6 4"/></svg>
-            <svg (click)="decreaseNumber('pomodoro')" xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 1l6 4 6-4"/></svg>
+            <svg (click)="increaseNumber('short')" xmlns="http://www.w3.org/2000/svg" width="14" height="7" ><path fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 6l6-4 6 4"/></svg>
+            <svg (click)="decreaseNumber('short')" xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 1l6 4 6-4"/></svg>
           </div>
         </div>
 
-
-    </div>
-    <div class="field">
-      <div class="time-label">short break</div>
-      <div class="input-container">
-        <div class="input">
-          <input disabled type="number" [(ngModel)]="minutesConfigShort"/>
-        </div>
-        <div class="icon-container">
-          <svg (click)="increaseNumber('short')" xmlns="http://www.w3.org/2000/svg" width="14" height="7" ><path fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 6l6-4 6 4"/></svg>
-          <svg (click)="decreaseNumber('short')" xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 1l6 4 6-4"/></svg>
-        </div>
       </div>
+      <div class="field">
+        <div class="time-label">long break</div>
+        <div class="input-container">
+          <div class="input">
+            <input disabled type="number" [(ngModel)]="minutesConfigLong"/>
+          </div>
+          <div class="icon-container">
+            <svg (click)="increaseNumber('long')" xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 6l6-4 6 4"/></svg>
+            <svg (click)="decreaseNumber('long')" xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 1l6 4 6-4"/></svg>
+          </div>
+        </div>
 
-    </div>
-    <div class="field">
-      <div class="time-label">long break</div>
-      <div class="input-container">
-        <div class="input">
-          <input disabled type="number" [(ngModel)]="minutesConfigLong"/>
-        </div>
-        <div class="icon-container">
-          <svg (click)="increaseNumber('long')" xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 6l6-4 6 4"/></svg>
-          <svg (click)="decreaseNumber('long')" xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path fill="none" stroke="#1E213F" stroke-opacity=".25" stroke-width="2" d="M1 1l6 4 6-4"/></svg>
-        </div>
       </div>
 
     </div>
   </div>
   <hr>
-  <div class="subtitle-config">FONT</div>
-  <div class="font-color-config">
-    <div class="circle-config font-kumbh" [ngClass]="{'font-selected' : fontSelected == 'kumbh'}" (click)="changeFont('kumbh')">Aa</div>
-    <div class="circle-config font-roboto" [ngClass]="{'font-selected' : fontSelected == 'roboto'}" (click)="changeFont('roboto')">Aa</div>
-    <div class="circle-config font-mono" [ngClass]="{'font-selected' : fontSelected == 'mono'}" (click)="changeFont('mono')">Aa</div>
+  <div class="config-group">
+    <div class="subtitle-config">FONT</div>
+    <div class="font-color-config">
+      <div class="circle-config font-kumbh" [ngClass]="{'font-selected' : fontSelected == 'kumbh'}" (click)="changeFont('kumbh')">Aa</div>
+      <div class="circle-config font-roboto" [ngClass]="{'font-selected' : fontSelected == 'roboto'}" (click)="changeFont('roboto')">Aa</div>
+      <div class="circle-config font-mono" [ngClass]="{'font-selected' : fontSelected == 'mono'}" (click)="changeFont('mono')">Aa</div>
+
+    </div>
 
   </div>
   <hr>
-  <div class="subtitle-config">COLOR</div>
-  <div class="font-color-config">
-    <div class="circle-config color-orange" (click)="changeColor('orange')">
-      <i *ngIf="colorThemeSelected == 'orange'" class="pi pi-check" style="font-size: 1rem"></i>
-    </div>
-    <div class="circle-config color-blue" (click)="changeColor('blue')">
-      <i *ngIf="colorThemeSelected == 'blue'" class="pi pi-check" style="font-size: 1rem"></i>
-    </div>
-    <div class="circle-config color-purple" (click)="changeColor('purple')">
-      <i *ngIf="colorThemeSelected == 'purple'" class="pi pi-check" style="font-size: 1rem"></i>
-    </div>
+  <div class="config-group">
+    <div class="subtitle-config">COLOR</div>
+    <div class="font-color-config">
+      <div class="circle-config color-orange" (click)="changeColor('orange')">
+        <i *ngIf="colorThemeSelected == 'orange'" class="pi pi-check" style="font-size: 1rem"></i>
+      </div>
+      <div class="circle-config color-blue" (click)="changeColor('blue')">
+        <i *ngIf="colorThemeSelected == 'blue'" class="pi pi-check" style="font-size: 1rem"></i>
+      </div>
+      <div class="circle-config color-purple" (click)="changeColor('purple')">
+        <i *ngIf="colorThemeSelected == 'purple'" class="pi pi-check" style="font-size: 1rem"></i>
+      </div>
 
+    </div>
   </div>
 
   <div class="button-apply-container"><button class="button-apply" (click)="apply()">Apply</button></div>

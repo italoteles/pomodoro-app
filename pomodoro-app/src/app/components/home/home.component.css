@@ -218,3 +218,92 @@
   top: 50%;
   transform: translate(-50%, 0%);
 }
+
+@media (min-width: 768px) {
+  .title{
+    padding:50px;
+    font-size: 32px;
+
+  }
+
+  .menu{
+    width:373px ;
+  }
+
+  .timer-container{
+    height: 600px;
+  }
+
+  .dark-circle{
+    height: 410px;
+    width: 410px;
+    margin-top: 109px;
+
+  }
+
+  .dark-circle svg{
+    width: 410px;
+    height: 410px;
+  }
+
+  .status{
+    font-size: 16px;
+    letter-spacing: 15px;
+  }
+
+  .time-left{
+    font-size: 100px;
+
+  }
+
+  .modal-config{
+    width: 90%;
+    max-width: 540px;
+    height: 460px;
+  }
+
+  .subtitle-config{
+    text-align: left;
+  }
+
+  .field-group{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: left;
+    padding : 15px;
+  }
+
+  .field{
+    display: flex;
+    flex-direction: column;
+  }
+  .config-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 30px;
+  }
+
+  .input-container{
+    max-width: 150px;
+
+  }
+
+  .input input{
+    width: 130px;
+
+  }
+
+  .button-apply{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 110%);
+  }
+
+
+
+
+
+
+}
